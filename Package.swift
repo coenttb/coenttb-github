@@ -12,10 +12,8 @@ extension Target.Dependency {
 }
 
 extension Target.Dependency {
-    static var coenttbWeb: Self { .product(name: "CoenttbWeb", package: "coenttb-web") }
-    static var codable: Self { .product(name: "MacroCodableKit", package: "macro-codable-kit") }
+    static var coenttbWeb: Self { .product(name: "Coenttb Web", package: "coenttb-web") }
     static var dependenciesMacros: Self { .product(name: "DependenciesMacros", package: "swift-dependencies") }
-    static var memberwiseInit: Self { .product(name: "MemberwiseInit", package: "swift-memberwise-init-macro") }
 }
 
 let package = Package(
@@ -29,8 +27,6 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/coenttb/coenttb-web", branch: "main"),
-        .package(url: "https://github.com/coenttb/macro-codable-kit.git", branch: "main"),
-        .package(url: "https://github.com/gohanlon/swift-memberwise-init-macro", from: "0.5.1"),
         .package(url: "https://github.com/pointfreeco/swift-dependencies", from: "1.6.0"),
     ],
     targets: [
@@ -38,7 +34,6 @@ let package = Package(
             name: .github,
             dependencies: [
                 .coenttbWeb,
-                .memberwiseInit,
                 .dependenciesMacros,
             ]
         ),
